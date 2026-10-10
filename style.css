@@ -1,6 +1,6 @@
 :root{--teal:#0AA6A6;--teal-d:#087F7F;--coral:#FF6B5B;--coral-d:#E8503F;--navy:#0F2A3D;--bg:#FFFFFF;--soft:#F4FBFB;--gray:#5C7079;--line:#E3EEEE}
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{overflow-x:hidden}
+html,body{overflow-x:clip}
 body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--bg);line-height:1.6}
 h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-.02em}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
@@ -79,10 +79,17 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .step .n{width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Plus Jakarta Sans';font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;position:relative;z-index:2}
 .step h3{font-size:16px;margin-bottom:6px}
 .step p{font-size:13px;color:var(--gray)}
-.boxgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.sign{background:#fff;border-radius:16px;padding:22px}
+.boxgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:6px;align-items:start}
+.boxgrid:has(.sign:nth-child(2):last-child){grid-template-columns:1.6fr 1fr}
+.sign{position:relative;background:var(--soft);border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:18px;padding:28px 28px 26px;box-shadow:0 10px 28px rgba(15,42,61,.06)}
+.sign h3{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-d);margin:0 0 14px}
+.sign h3::before{content:"";flex:none;width:36px;height:36px;border-radius:11px;background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z'/%3E%3C/svg%3E") center/20px no-repeat}
 .sign h4{font-size:16px;margin-bottom:6px;color:var(--navy)}
-.sign p{font-size:14px;color:var(--gray)}
+.sign p{font-size:15.5px;line-height:1.75;color:#3F545E;margin:0}
+.boxgrid .sign:nth-child(2):last-child{background:var(--navy);border-color:var(--navy);border-top-color:var(--coral)}
+.boxgrid .sign:nth-child(2):last-child h3{color:#fff}
+.boxgrid .sign:nth-child(2):last-child h3::before{background:var(--coral) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v5l3 2'/%3E%3C/svg%3E") center/20px no-repeat}
+.boxgrid .sign:nth-child(2):last-child p{color:#D5E3E8;font-size:16.5px}
 .faq div{border-bottom:1px solid var(--line);padding:16px 0}
 .faq b{display:block;font-size:15px;margin-bottom:5px}
 .faq p{font-size:14px;color:var(--gray)}
@@ -114,7 +121,7 @@ footer p{color:var(--gray);margin-bottom:7px;font-size:13.5px}
 .herocall .lbl{color:var(--gray);font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
 .herocall .num{font-family:'Plus Jakarta Sans';font-weight:800;font-size:23px;color:var(--navy);margin:6px 0 12px}
 .twocol{display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:start}
-.sidecard{background:var(--navy);color:#fff;border-radius:20px;padding:26px;position:sticky;top:20px}
+.sidecard{background:var(--navy);color:#fff;border-radius:20px;padding:26px;position:sticky;top:24px}
 .sidecard h3{font-size:18px;margin-bottom:6px}
 .sidecard p{color:#9FBAC4;font-size:14px;margin-bottom:14px}
 .sidecard .btn{width:100%;justify-content:center}
@@ -188,3 +195,27 @@ footer p{color:var(--gray);margin-bottom:7px;font-size:13.5px}
 .statcard{z-index:3}
 .svc-photo-wrap{margin:-10px 0 32px;border-radius:20px;overflow:hidden;box-shadow:0 20px 40px rgba(15,42,61,.15)}
 .svc-photo-wrap img{width:100%;height:auto;max-height:480px;object-fit:cover;display:block}
+
+.home-intro{color:var(--gray);max-width:760px;margin-bottom:24px}
+.home-also{margin-top:22px}
+.home-also a,.para-spaced a{color:#087575;font-weight:600}
+.para-spaced + .localgrid{margin-top:18px}
+
+.pagehead.has-bg{position:relative;isolation:isolate;overflow:hidden;background:var(--navy);padding:84px 0 80px}
+.pagehead-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.pagehead.has-bg::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,42,61,.93) 0%,rgba(15,42,61,.82) 45%,rgba(15,42,61,.45) 100%)}
+.pagehead.has-bg h1{color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+.pagehead.has-bg p{color:#E4EFF2}
+.pagehead.has-bg .crumb{color:#BFD6DC}
+.pagehead.has-bg .crumb a{color:#7FE0DD}
+.pagehead.has-bg .ziprow-label{color:#fff}
+.pagehead.has-bg .herocall{box-shadow:0 24px 54px rgba(0,0,0,.35)}
+@media(max-width:760px){.pagehead.has-bg{padding:52px 0 48px}.pagehead.has-bg::after{background:linear-gradient(180deg,rgba(15,42,61,.9) 0%,rgba(15,42,61,.82) 100%)}}
+@media(max-width:900px){.boxgrid,.boxgrid:has(.sign:nth-child(2):last-child){grid-template-columns:1fr}}
+.boxgrid:not(:has(.sign:nth-child(2):last-child)){counter-reset:sg;gap:22px}
+.boxgrid:not(:has(.sign:nth-child(2):last-child)) .sign{counter-increment:sg;border-top-width:1px;border-left:5px solid var(--teal);padding:26px 28px 26px 26px;background:#fff;transition:transform .2s,box-shadow .2s}
+.boxgrid:not(:has(.sign:nth-child(2):last-child)) .sign:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(15,42,61,.12)}
+.boxgrid:not(:has(.sign:nth-child(2):last-child)) .sign:nth-child(even){border-left-color:var(--coral)}
+.boxgrid:not(:has(.sign:nth-child(2):last-child)) .sign h3{font-size:18px;letter-spacing:0;text-transform:none;color:var(--navy);font-weight:800;margin-bottom:12px}
+.boxgrid:not(:has(.sign:nth-child(2):last-child)) .sign h3::before{content:counter(sg,decimal-leading-zero);background:var(--soft);color:var(--teal-d);font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+.boxgrid:not(:has(.sign:nth-child(2):last-child)) .sign:nth-child(even) h3::before{color:var(--coral-d);background:#FFF3F1;border-color:#FFD9D3}
