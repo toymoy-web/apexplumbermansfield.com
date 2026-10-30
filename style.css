@@ -219,3 +219,9 @@ footer p{color:var(--gray);margin-bottom:7px;font-size:13.5px}
 .boxgrid:not(:has(.sign:nth-child(2):last-child)) .sign h3{font-size:18px;letter-spacing:0;text-transform:none;color:var(--navy);font-weight:800;margin-bottom:12px}
 .boxgrid:not(:has(.sign:nth-child(2):last-child)) .sign h3::before{content:counter(sg,decimal-leading-zero);background:var(--soft);color:var(--teal-d);font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
 .boxgrid:not(:has(.sign:nth-child(2):last-child)) .sign:nth-child(even) h3::before{color:var(--coral-d);background:#FFF3F1;border-color:#FFD9D3}
+
+.social{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px}
+.social-label{width:100%;font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin-bottom:2px}
+footer .social a{display:inline-flex;margin:0;background:var(--soft);border:1px solid var(--line);color:var(--teal-d);font-weight:700;font-size:12.5px;padding:6px 12px;border-radius:100px;transition:background .15s,color .15s,border-color .15s}
+footer .social a:hover{background:var(--teal);border-color:var(--teal);color:#fff}
+@media(max-width:600px){footer .wrap{grid-template-columns:1fr;gap:24px}}
