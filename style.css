@@ -225,3 +225,5 @@ footer p{color:var(--gray);margin-bottom:7px;font-size:13.5px}
 footer .social a{display:inline-flex;margin:0;background:var(--soft);border:1px solid var(--line);color:var(--teal-d);font-weight:700;font-size:12.5px;padding:6px 12px;border-radius:100px;transition:background .15s,color .15s,border-color .15s}
 footer .social a:hover{background:var(--teal);border-color:var(--teal);color:#fff}
 @media(max-width:600px){footer .wrap{grid-template-columns:1fr;gap:24px}}
+
+.nbhd-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.nbhd-links a{background:#fff;border:1px solid var(--line);color:var(--teal-d);font-weight:700;font-size:15px;padding:10px 18px;border-radius:100px;text-decoration:none}.nbhd-links a:hover{border-color:var(--teal);background:var(--soft)}
